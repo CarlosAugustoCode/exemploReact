@@ -2,7 +2,7 @@
 .main_cad_servico {
     background-image:
         linear-gradient(180deg, #060821 0%, #06082120 25%, #0608218f 80%, #060821 100%),
-        url("../img/background_login.png");
+        url("../../assets/img/background_login.png");
     min-height: calc(100vh - 339px);
     background-size: cover;
     background-repeat: no-repeat;
@@ -66,8 +66,8 @@
 }
 
 .main_cad_servico .cad_serv_box_input textarea,
-.main_cad_servico .cad_serv_box_input2 > input,
-.main_cad_servico .cad_serv_box_input > input {
+.main_cad_servico .cad_serv_box_input2>input,
+.main_cad_servico .cad_serv_box_input>input {
     width: 100%;
     padding: 8px;
     border-radius: 20px;
@@ -80,14 +80,14 @@
     resize: none;
 }
 
-.main_cad_servico .cad_serv_box_input textarea{
+.main_cad_servico .cad_serv_box_input textarea {
     height: 100px;
 }
 
 .main_cad_servico .cad_serv_box_input textarea:focus-visible,
 .main_cad_servico #cad_select_skill:focus-visible,
-.main_cad_servico .cad_serv_box_input2 > input:focus-visible,
-.main_cad_servico .cad_serv_box_input > input:focus-visible {
+.main_cad_servico .cad_serv_box_input2>input:focus-visible,
+.main_cad_servico .cad_serv_box_input>input:focus-visible {
     outline: 2px solid var(--rosa);
 }
 
@@ -102,14 +102,14 @@
 }
 
 .main_cad_servico .cad_serv_box_input textarea::placeholder,
-.main_cad_servico .cad_serv_box_input2 > input::placeholder,
-.main_cad_servico .cad_serv_box_input > input::placeholder {
+.main_cad_servico .cad_serv_box_input2>input::placeholder,
+.main_cad_servico .cad_serv_box_input>input::placeholder {
     color: #ffffff80;
     font-size: 15px;
     font-family: var(--font2);
 }
 
-.main_cad_servico .cad_serv_formulario > span{
+.main_cad_servico .cad_serv_formulario>span {
     font-family: var(--font1);
     font-size: 30px;
     text-align: center;
@@ -121,16 +121,16 @@
     flex-direction: column;
     position: relative;
     right: 182px;
-    width: 460px; 
+    width: 460px;
     display: none;
 }
 
-.main_cad_servico .cad_linha_select{
+.main_cad_servico .cad_linha_select {
     display: flex;
     gap: 10%;
 }
 
-.main_cad_servico #cad_select_skill{
+.main_cad_servico #cad_select_skill {
     flex: 2;
     padding: 8px;
     border-radius: 20px;
@@ -139,18 +139,18 @@
     box-shadow: 30px 30px 60px 0px #00000090;
     backdrop-filter: blur(15px);
     color: #ffffffaa;
-    font-size:  16px;
+    font-size: 16px;
 }
 
-.main_cad_servico #cad_select_skill option{
+.main_cad_servico #cad_select_skill option {
     /* appearance: none; */
     background-color: #454158;
     /* background: linear-gradient(136deg, #ffffff1a 0%, #ffffff0b 100%); */
 }
 
-.main_cad_servico #cad_btn_inserir{
+.main_cad_servico #cad_btn_inserir {
     flex: .8;
-    font-size:  18px;
+    font-size: 18px;
     color: var(--branco);
     border: 4px solid var(--rosa);
     /* padding: 4px 30px; */
@@ -161,14 +161,14 @@
     cursor: pointer;
 }
 
-.main_cad_servico #cad_lista_skills{
+.main_cad_servico #cad_lista_skills {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     padding: 50px 0;
 }
 
-.main_cad_servico .cad_item_skill{
+.main_cad_servico .cad_item_skill {
     border: 1px solid #b5b5b5;
     background: var(--branco);
     color: var(--azulP);
@@ -180,7 +180,7 @@
     gap: 10px;
 }
 
-.main_cad_servico .cad_item_excluir{
+.main_cad_servico .cad_item_excluir {
     background: none;
     border: none;
     display: flex;
@@ -188,12 +188,12 @@
     cursor: pointer;
 }
 
-.main_cad_servico .cad_item_excluir:hover{
+.main_cad_servico .cad_item_excluir:hover {
     scale: 1.1;
-    filter:drop-shadow(0 0 2px var(--azul));
+    filter: drop-shadow(0 0 2px var(--azul));
 }
 
-.main_cad_servico .cad_item_excluir svg{
+.main_cad_servico .cad_item_excluir svg {
     fill: var(--rosa);
     height: 16px;
 }

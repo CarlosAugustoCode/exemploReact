@@ -1,6 +1,17 @@
 import "./style.css"
 
 export default function CardDev(props: any) {
+
+// Função para conversáo do formato das Techs de String p/Objeto
+function parseListaTechs(){
+
+    if (typeof props.techs === "string") {
+        return JSON.parse(props.techs)
+    }else{
+        return props.techs
+    }
+}
+
     return (
         <div className="dev">
             <div className="grupo_contato">
@@ -12,7 +23,7 @@ export default function CardDev(props: any) {
             </div>
             <div className="techs">
                 {
-                    props.techs.map((tech: string, index: number) => {
+                    parseListaTechs().map((tech: string, index: number) => {
                         return <span key={index}>{tech}</span>
                     })
                 }
