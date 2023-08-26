@@ -23,24 +23,30 @@ function PerfilUsuario() {
     const [cidade, setCidade] = useState<string>("");
     const [listaSkills, setListaSkills] = useState<string[]>([]);
 
-    function buscarUsuarioPorId(){
-        api.get("users/" +idUsuario).then((response:any) => {
+    function buscarUsuarioPorId() {
+        api.get("users/" + idUsuario).then((response: any) => {
             setNome(response.data.nome)
-            setFoto("http://localhost:3000/static/"+response.data.user_img)
+            setFoto("http://localhost:3000/static/" + response.data.user_img)
             setEmail(response.data.email)
             setUf(response.data.uf)
             setCidade(response.data.cidade)
-            setListaSkills(response.data.hardSkills)
-        }).catch((error)=>{
+
+            if (typeof response.data.hardSkills === "string") {
+                setListaSkills(JSON.parse(response.data.hardSkills))
+            } else {
+                setListaSkills(response.data.hardSkills)
+            }
+
+        }).catch((error) => {
             console.log(error)
         })
     }
 
-    useEffect(()=>{
-        document.title = "Perfil de " +nome+ " - VSConnect";
+    useEffect(() => {
+        document.title = "Perfil de " + nome + " - VSConnect";
 
         buscarUsuarioPorId();
-    },[])
+    }, [])
 
     return (
         <main id="main_perfilusuario">
@@ -50,15 +56,15 @@ function PerfilUsuario() {
 
                     <div className="topo_dev">
                         <img src={foto} alt={`Foto de perfil de ${nome}`} />
-                        <h2>{ nome }</h2>
+                        <h2>{nome}</h2>
                     </div>
 
                     <div className="contato_local">
                         <div className="contato">
                             <p>Email para contato:</p>
-                            <Link to={"mailto: " + email}>{ email }</Link>
+                            <Link to={"mailto: " + email}>{email}</Link>
                         </div>
-                        <div className="local"> 
+                        <div className="local">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 384 512">
@@ -67,7 +73,7 @@ function PerfilUsuario() {
                                     d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
                                 />
                             </svg>
-                            <p>De: { cidade } - { uf }</p>
+                            <p>De: {cidade} - {uf}</p>
                         </div>
                     </div>
 
@@ -75,8 +81,8 @@ function PerfilUsuario() {
                         <p>Tecnologias principais: </p>
                         <div className="lista_skills">
                             {
-                                listaSkills.map( (skill: any, index: number) => {
-                                    return <span key={ index }>{ skill }</span>
+                                listaSkills.map((skill: any, index: number) => {
+                                    return <span key={index}>{skill}</span>
                                 })
                             }
                         </div>

@@ -25,6 +25,7 @@ function fazerLogin(event: any){
         
         secureLocalStorage.setItem("user", response.data)
         navigate("/perfil/" + response.data.user.id)
+        navigate(0) // Recarregar a página e resgatar no LocalStorage os dados do usuário que está logado.
     })
 }
 
